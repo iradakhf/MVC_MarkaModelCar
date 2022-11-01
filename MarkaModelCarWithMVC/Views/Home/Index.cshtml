@@ -1,0 +1,31 @@
+﻿@using MarkaModelCarWithMVC.ViewModel.Home
+@model HomeVM
+
+
+<h1>
+    Home Index
+</h1>
+
+<h2>
+    Markas
+</h2>
+@foreach (Marka marka in Model.Markas)
+{
+    <p>
+        <a asp-action="models" asp-controller="home" asp-route-id="@marka.Id" asp-route-name="@marka.Name">@marka.Name</a>
+    </p>
+
+}
+
+<h2>
+    Models
+</h2>
+@foreach (Model modeli in Model.Models)
+{
+    <p>
+        <a asp-action="cars" asp-controller="home" asp-route-id="@modeli.Id" asp-route-name="@modeli.Name">@modeli.Name</a>
+    </p>
+
+}
+
+
